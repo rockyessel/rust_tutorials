@@ -7,12 +7,13 @@ fn main() {
     println!("Guessing Game");
 
     println!("Please input your guess.");
-
-    let secret_number: u32 = rand::thread_rng().gen_range(1..101);
-
-    println!("Guessed number: {}", secret_number);
-
+    
+        let secret_number: u32 = rand::thread_rng().gen_range(1..101);
+    
+        println!("Guessed number: {}", secret_number);
+    
     loop {
+
         let mut user_input_guess: String = String::new();
 
         io::stdin()
