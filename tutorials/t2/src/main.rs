@@ -10,3 +10,4 @@ fn main() {
 // cargo check - To check if a project will be able to compile, without any errors.
 // rustfmt - To format a rust code properly.
 // rustc <rust_filename> - To run the rust file or program.
+//rustup - For updating rust .

@@ -26,12 +26,12 @@ fn main() {
 
             println!("{}", y);z
 
-                the varaible "y" is no longer used here.
+                the variable "y" is no longer used here.
         };
      and ends here}
 
      So when the code gets read from top to down, and it passes the scope, from where
-     the bracket is open, when the varaible "y" is done been use, and goes outside the
+     the bracket is open, when the variable "y" is done been use, and goes outside the
      scope, from where the bracket closes, then the value has been dropped.
 
      -------------------------------------------------------------------------------------
@@ -55,3 +55,15 @@ fn main() {
     println!("a: {}", a);
     println!("b: {}", b);
 }
+
+
+
+//  curl 'https://gtoaixbm.api.sanity.io/v2021-06-07/data/mutate/production'
+//  -H 'Authorization: Bearer '
+//  -H 'Content-Type: application/json'
+//  --data-binary '{"mutations":[]}'
+
+//  curl 'https://gtoaixbm.api.sanity.io/v2021-06-07/data/mutate/production' \
+//     -H 'Authorization: Bearer sk98sS8vRzMMPN6IB0Y0yrV3L0UYKWoIEKoilBd33curhKPjyI6wd6hEyiGZDVm7lLIMRCO1pTT4rOw4xxYhhf57QPNVAs0U1ep5B0C2DwGMoHPvlpxbUXvcltacaL6sugdF3iJN8d7IjaKQ9bRxaVGCuSh6kZSh0UGDvkhiGOL9xCTf1Q9X' \
+//     -H 'Content-Type: application/json' \
+//     --data-binary '{"mutations":[{"patch": {"id": "7ff25ddf-91d2-44ba-8630-45493d1242b5", "inc": {"viewCount": 1}, "params":{"id": "7ff25ddf-91d2-44ba-8630-45493d1242b5"}}}]}'
