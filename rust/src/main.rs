@@ -40,45 +40,6 @@ fn main() {
     John is coding in Rust, cool right? --another line
     */
 
-    let a = 3;
-    let mut b = 2;
-
-    let operators = ["+", "-", "/", "%", "*", "("];
-
-    let operators_iterator = operators.iter();
-
-    let x = for operator in operators_iterator {
-        match operator as &str {
-            "+" => {
-                let c = a + b;
-                println!("{:?}", c)
-            },
-            "-" => {
-                let c = b - a;
-                println!("{:?}", c)
-            },
-            "*" => {
-                let c = a * b;
-                println!("{:?}", c)
-            },
-            "/" => {
-                let c = a / b;
-                println!("{:?}", c)
-            },
-            "%" => {
-                let c = a % b;
-                println!("{:?}", c)
-            },
-            "(" => {
-                println!("invalid operator")
-            },
-            _ => {
-                print!("None")
-            }
-        }
-    };
-
-    print!("{:#?}", x);
 
 
 
@@ -104,4 +65,6 @@ fn main() {
 
     // // display the array
     // println!("Age: {:?}", ages);
-} // example code for using the next method.
+    
+} // example code for using the next method
+

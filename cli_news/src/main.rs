@@ -12,7 +12,7 @@ struct Articles {
 #[derive(Deserialize, Debug)]
 struct Article {
     title: String,
-    url: String,
+    url: String
 }
 
 fn get_articles(url: &str) -> Result<Articles, Box<dyn Error>> {
@@ -20,12 +20,12 @@ fn get_articles(url: &str) -> Result<Articles, Box<dyn Error>> {
 
     let articles: Articles = serde_json::from_str(&response)?;
 
-    Ok(response)
+    Ok(articles)
 
 }
 
 fn render_articles(articles: &Articles) {
-    for i in articles.articles {
+    for i in &articles.articles {
         dark_green!("> {}\n", i.title);
         yellow!("> {}\n", i.url);
     }
