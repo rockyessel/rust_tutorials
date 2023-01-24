@@ -1,4 +1,10 @@
 fn main() {
+
+    let n= 3;
+    
+    let factorial = recursive(n);
+    println!("factorial: {:?}", factorial);
+
     let arr: [u32; 5] = [1, 2, 3, 4, 5];
 
     let sqr_arr =  sqr_arr_values(arr);
@@ -65,4 +71,13 @@ fn sqr_arr_values( mut arr: [u32;5]) -> [u32; 5] {
     }
 
     return arr
+}
+
+fn recursive(n: u64) -> u64 {
+    if n == 0 {
+        1
+    }
+    else{
+        n * recursive(n-1)
+    }
 }
