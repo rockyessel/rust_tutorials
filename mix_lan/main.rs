@@ -1,8 +1,7 @@
-fn main() {
-let arr [u32,5] = [1,2,3,4,5]
 
-cal_mean(arr)
-}
+
+
+
 
 fn cal_mean(arr: [u32; 5])-> usize{
     let arr_len = arr.len() as usize;
@@ -18,4 +17,13 @@ fn cal_mean(arr: [u32; 5])-> usize{
     let mean = all_sum_values as usize / arr_len;
 
     return mean 
+}
+
+
+fn main() {
+let arr [u32,5] = [1,2,3,4,5]
+
+let values: Vec<u32> = Vec::new();
+
+cal_mean(arr)
 }
