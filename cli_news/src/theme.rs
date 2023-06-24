@@ -1,6 +1,5 @@
 use termimad::crossterm::style::Color::*;
-use termimad::{ MadSkin, StyledChar};
-
+use termimad::{MadSkin, StyledChar};
 
 pub fn default() -> MadSkin {
     let mut skin = MadSkin::default();

@@ -1,16 +1,18 @@
 [package]
 name = "cli_news"
 version = "0.1.0"
-edition = "2021"
+edition = "2023"
+
+description = "A simple cli news reader app"
+license = "MIT"
+authors = ["creativcoder"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-description = "This is an Rust Application"
-license = "MIT"
-authors =["Rocky Essel"]
 
 [dependencies]
 colour = "0.6.0"
 crossterm = "0.25.0"
 dotenv = "0.15.0"
-news_api = { path = "./news_api"}
+news_api = { path = "./news_api", features = ["async"] }
 termimad = "0.20.6"
+tokio = {version = "1.11.0", features = ["full"] }

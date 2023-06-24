@@ -1,34 +1,31 @@
-// #![windows_subsystem = "windows"] 
-
 mod theme;
 
-// use colour::{dark_green, yellow};
 use dotenv::dotenv;
-
-use news_api::{get_articles, Articles};
+use news_api::{NewsAPI, Article, Country, Endpoint};
 use std::error::Error;
 
-fn render_articles(articles: &Articles) {
+fn render_articles(articles: &Vec<Article>) {
     let theme = theme::default();
 
     theme.print_text("# Top headlines\n\n");
-    for i in &articles.articles {
-        theme.print_text(&format!("`{}`", i.title));
-        theme.print_text(&format!("> *{}*", i.url));
+    for i in articles {
+        theme.print_text(&format!("`{}`", i.title()));
+        theme.print_text(&format!("> *{}*", i.url()));
         theme.print_text(&format!("---"));
     }
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
-    dotenv()?;
+#[tokio::main]
+ async fn main() -> Result<(), Box<dyn Error>>  {
+    dotenv().ok();
 
     let api_key = std::env::var("API_KEY")?;
 
-    let url = format!("https://newsapi.org/v2/top-headlines?country=us&apiKey={api_key}");
+    let mut newsapi = NewsAPI::new(&api_key);
+    newsapi.endpoint(Endpoint::TopHeadlines).country(Country::Us);
 
-    let articles = get_articles(&url)?;
-
-    render_articles(&articles);
+    let news_api_response = newsapi.fetch_async().await?;
+    render_articles(&news_api_response.articles());
 
     Ok(())
 }
